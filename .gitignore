@@ -26,6 +26,7 @@ logs/*
 target/
 build/
 classes/
+.gradle/
 
 ### etc ###
 rebel.xml
