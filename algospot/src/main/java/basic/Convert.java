@@ -1,3 +1,5 @@
+package basic;
+
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;

@@ -1,3 +1,5 @@
+package basic;
+
 /**
  * @author archmagece
  * @since 2017-02-12 14
