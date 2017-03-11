@@ -21,9 +21,6 @@ public class Endians {
 //			System.out.println("index "+ i + "  "+input);
 			params.add(input);
 		}
-//		System.out.println();
-//		System.out.println();
-//		System.out.println();
 
 		//call loop
 		for(long param : params){

@@ -32,12 +32,6 @@ public class Lecture {
 			}
 //			intArr.sort(Comparator.comparingInt(o2 -> (o2[0] + o2[1])));
 //			intArr.sort((o1, o2) -> (o1[0] + o1[1]) - (o2[0] + o2[1]));
-//			intArr.sort(new Comparator<char[]>() {
-//				@Override
-//				public int compare(char[] o1, char[] o2) {
-//					return (o1[0] + o1[1]) - (o2[0] + o2[1]) ;
-//				}
-//			});
 			intArr.sort(new Comparator<char[]>() {
 				@Override
 				public int compare(char[] o1, char[] o2) {

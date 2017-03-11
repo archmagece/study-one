@@ -70,22 +70,22 @@ allprojects {
 	repositories {
 		mavenCentral()
 		maven { url "http://clojars.org/repo" }
-		maven {
-			name 'beansugar-private-release'
-			url 'http://nexus.beansugar.org/content/repositories/private-release'
-			credentials {
-				username beansugarUser
-				password beansugarPassword
-			}
-		}
-		maven {
-			name 'beansugar-private-snapshot'
-			url 'http://nexus.beansugar.org/content/repositories/private-snapshot'
-			credentials {
-				username beansugarUser
-				password beansugarPassword
-			}
-		}
+//		maven {
+//			name 'beansugar-private-release'
+//			url 'http://nexus.beansugar.org/content/repositories/private-release'
+//			credentials {
+//				username beansugarUser
+//				password beansugarPassword
+//			}
+//		}
+//		maven {
+//			name 'beansugar-private-snapshot'
+//			url 'http://nexus.beansugar.org/content/repositories/private-snapshot'
+//			credentials {
+//				username beansugarUser
+//				password beansugarPassword
+//			}
+//		}
 		maven {
 			name 'beansugar-public-release'
 			url 'http://nexus.beansugar.org/content/repositories/public-release'
