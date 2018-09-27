@@ -27,6 +27,8 @@ target/
 build/
 classes/
 .gradle/
+gradle/
+/gradlew*
 
 ### etc ###
 rebel.xml
