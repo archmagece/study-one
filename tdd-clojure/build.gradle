@@ -1,0 +1,40 @@
+plugins {
+	id 'java'
+	id "gradle-clojure.clojure" version "0.4.0"
+
+//	implementation  "org.clojure:clojure:$clojure_version"
+////		implementation  'org.clojure:data.json:0.2.6'
+//	// dependencies for REPL use only
+////		devImplementation 'org.clojure:tools.namespace:0.3.0-alpha4'
+
+	id 'eclipse'
+	id 'eclipse-wtp'
+	id 'idea'
+
+	//querydsl 오류 해결
+//	id 'io.franzbecker.gradle-lombok' version '1.14'
+//	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+//	id "nu.studer.jooq" version "3.0.2"
+}
+
+apply plugin: "gradle-clojure.clojure"
+apply plugin: 'gradle-clojure.clojurescript'
+apply from: '../gradle-common/tdd.gradle'
+
+group 'archmagece'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = java_version
+targetCompatibility = java_version
+
+repositories {
+	maven { url = 'http://clojars.org/repo' }
+	maven { url = 'http://repo.clojars.org/' }
+}
+dependencies {
+	//logging
+	compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+
+	testImplementation "junit:junit:$junit_version"
+}
+

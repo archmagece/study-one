@@ -1,0 +1,34 @@
+ext {
+	lombok_version = '1.18.2'
+	spring_boot_version = '2.0.5.RELEASE'
+	junit_version = '4.12'
+	java_version = '1.8'
+}
+
+idea {
+	module {
+		downloadJavadoc = true
+		downloadSources = true
+	}
+}
+eclipse {
+	classpath {
+		downloadJavadoc = true
+		downloadSources = true
+	}
+}
+
+repositories {
+	mavenCentral()
+	jcenter()
+	mavenLocal()
+	maven {
+		url "https://plugins.gradle.org/m2/"
+	}
+	maven { url 'https://dl.bintray.com/archmagece/jvm-repo' }
+//		maven { url 'https://dl.bintray.com/palantir/releases' }
+//		maven {
+//			name 'testcontainers'
+//			url 'https://jitpack.io'
+//		}
+}

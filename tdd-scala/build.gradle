@@ -1,0 +1,30 @@
+plugins {
+	id 'java'
+	id 'scala'
+
+	id 'eclipse'
+	id 'eclipse-wtp'
+	id 'idea'
+
+	//querydsl 오류 해결
+//	id 'io.franzbecker.gradle-lombok' version '1.14'
+//	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+//	id "nu.studer.jooq" version "3.0.2"
+}
+
+apply plugin: 'scala'
+apply from: '../gradle-common/tdd.gradle'
+
+group 'archmagece'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = java_version
+targetCompatibility = java_version
+
+dependencies {
+	//logging
+	compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+
+	testImplementation "junit:junit:$junit_version"
+}
+
