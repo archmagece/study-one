@@ -8,13 +8,13 @@ buildscript {
 		maven { url = 'http://clojars.org/repo' }
 		maven { url = 'http://repo.clojars.org/' }
 	}
-	dependencies {
-		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-//		classpath "gradle.plugin.org.gradle.kotlin:gradle-kotlin-dsl-plugins:1.0-rc-9"
-
-//		classpath "clojuresque:clojuresque:1.7.0"
-		classpath "io.github.gradle-clojure:gradle-clojure-plugin:$clojure_gradle_plugin_version"
-	}
+//	dependencies {
+//		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+////		classpath "gradle.plugin.org.gradle.kotlin:gradle-kotlin-dsl-plugins:1.0-rc-9"
+//
+////		classpath "clojuresque:clojuresque:1.7.0"
+//		classpath "io.github.gradle-clojure:gradle-clojure-plugin:$clojure_gradle_plugin_version"
+//	}
 }
 
 apply plugin: 'base'
@@ -30,91 +30,91 @@ allprojects {
 		maven { url 'http://clojars.org/repo' }
 	}
 
-	apply plugin: 'java'
-
-	dependencies {
-		implementation "org.codehaus.groovy:groovy:$groovy_version"
-//		implementation "org.codehaus.groovy:groovy-all:$groovy_version"
-
-		implementation "org.scala-lang:scala-library:$scala_version"
-		testImplementation "org.scalatest:scalatest_2.12:$scala_test_version"
-
-		implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-		implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-		testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
-
-		implementation  "org.clojure:clojure:$clojure_version"
-//		implementation  'org.clojure:data.json:0.2.6'
-		// dependencies for REPL use only
-//		devImplementation 'org.clojure:tools.namespace:0.3.0-alpha4'
-
-	}
+//	apply plugin: 'java'
+//
+//	dependencies {
+//		implementation "org.codehaus.groovy:groovy:$groovy_version"
+////		implementation "org.codehaus.groovy:groovy-all:$groovy_version"
+//
+//		implementation "org.scala-lang:scala-library:$scala_version"
+//		testImplementation "org.scalatest:scalatest_2.12:$scala_test_version"
+//
+//		implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+//		implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+//		testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+//
+//		implementation  "org.clojure:clojure:$clojure_version"
+////		implementation  'org.clojure:data.json:0.2.6'
+//		// dependencies for REPL use only
+////		devImplementation 'org.clojure:tools.namespace:0.3.0-alpha4'
+//
+//	}
 }
 
-subprojects { subproject ->
-	apply plugin: 'java'
-	apply plugin: 'groovy'
-	apply plugin: 'scala'
-	apply plugin: 'kotlin'
-//	apply plugin: "org.gradle.kotlin.kotlin-dsl"
-//	apply plugin: 'kotlin-spring'
-//	apply plugin: 'kotlin-jpa'
-//	apply plugin: "kotlin2js"
-//	apply plugin: 'clojure'
-	apply plugin: 'gradle-clojure.clojure'
-	apply plugin: 'gradle-clojure.clojurescript'
-
-	idea {
-		module {
-			downloadJavadoc = true
-			downloadSources = true
-		}
-	}
-	eclipse {
-		classpath {
-			downloadJavadoc = true
-			downloadSources = true
-		}
-	}
-
-	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-	tasks.withType(JavaCompile) {
-		options.encoding = 'UTF-8'
-	}
-
-	group = project_group
-	version = project_version
-	sourceCompatibility = java_version
-	targetCompatibility = java_version
-	compileKotlin {
-		kotlinOptions.jvmTarget = java_version
-		kotlinOptions.freeCompilerArgs = ["-Xjsr305=strict"]
-	}
-	compileTestKotlin {
-		kotlinOptions.jvmTarget = java_version
-		kotlinOptions.freeCompilerArgs = ["-Xjsr305=strict"]
-	}
-	clojure {
-		builds {
-			main {
-				aotAll()
-			}
-		}
-	}
-
-//	test{
-//		testLogging{
-//			events "passed", "skipped", "failed", "standardOut", "StanmdardError"
+//subprojects { subproject ->
+//	apply plugin: 'java'
+//	apply plugin: 'groovy'
+//	apply plugin: 'scala'
+//	apply plugin: 'kotlin'
+////	apply plugin: "org.gradle.kotlin.kotlin-dsl"
+////	apply plugin: 'kotlin-spring'
+////	apply plugin: 'kotlin-jpa'
+////	apply plugin: "kotlin2js"
+////	apply plugin: 'clojure'
+//	apply plugin: 'gradle-clojure.clojure'
+//	apply plugin: 'gradle-clojure.clojurescript'
+//
+//	idea {
+//		module {
+//			downloadJavadoc = true
+//			downloadSources = true
 //		}
 //	}
-
-	dependencies {
-		compileOnly "org.projectlombok:lombok:$lombok_version"
-		testCompile "org.projectlombok:lombok:$lombok_version"
-
-		//logging
-		compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
-
-		testImplementation "junit:junit:$junit_version"
-	}
-}
+//	eclipse {
+//		classpath {
+//			downloadJavadoc = true
+//			downloadSources = true
+//		}
+//	}
+//
+//	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+//	tasks.withType(JavaCompile) {
+//		options.encoding = 'UTF-8'
+//	}
+//
+//	group = project_group
+//	version = project_version
+//	sourceCompatibility = java_version
+//	targetCompatibility = java_version
+//	compileKotlin {
+//		kotlinOptions.jvmTarget = java_version
+//		kotlinOptions.freeCompilerArgs = ["-Xjsr305=strict"]
+//	}
+//	compileTestKotlin {
+//		kotlinOptions.jvmTarget = java_version
+//		kotlinOptions.freeCompilerArgs = ["-Xjsr305=strict"]
+//	}
+//	clojure {
+//		builds {
+//			main {
+//				aotAll()
+//			}
+//		}
+//	}
+//
+////	test{
+////		testLogging{
+////			events "passed", "skipped", "failed", "standardOut", "StanmdardError"
+////		}
+////	}
+//
+//	dependencies {
+//		compileOnly "org.projectlombok:lombok:$lombok_version"
+//		testCompile "org.projectlombok:lombok:$lombok_version"
+//
+//		//logging
+//		compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+//
+//		testImplementation "junit:junit:$junit_version"
+//	}
+//}

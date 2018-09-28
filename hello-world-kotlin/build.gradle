@@ -1,0 +1,37 @@
+plugins {
+//	id 'kotlin-platform-jvm' version '1.2.71'
+	id 'org.jetbrains.kotlin.jvm' version '1.2.71'
+
+//	id "org.jetbrains.kotlin.plugin.allopen" version "1.2.71"
+//	id "org.jetbrains.kotlin.plugin.noarg" version "1.2.71"
+//	id "org.gradle.kotlin.kotlin-dsl" version "1.0-rc-9"
+}
+
+//apply plugin: "org.jetbrains.kotlin.jvm"
+apply from: '../gradle-common/tdd.gradle'
+
+group 'archmagece'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = java_version
+targetCompatibility = java_version
+compileKotlin {
+	kotlinOptions.jvmTarget = java_version
+	kotlinOptions.freeCompilerArgs = ['-Xjsr305=strict']
+}
+compileTestKotlin {
+	kotlinOptions.jvmTarget = java_version
+	kotlinOptions.freeCompilerArgs = ['-Xjsr305=strict']
+}
+
+dependencies {
+	compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+	testCompile "org.jetbrains.kotlin:kotlin-test"
+	testCompile "org.jetbrains.kotlin:kotlin-test-junit"
+
+	//logging
+	compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+
+	testImplementation "junit:junit:$junit_version"
+}
+

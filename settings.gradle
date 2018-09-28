@@ -1,5 +1,6 @@
 rootProject.name = 'study-one'
 
-include 'algospot'
-include 'book1'
-include 'hello-world'
+include 'algospot-java'
+include 'hello-world-kotlin'
+include 'hello-world-scala'
+
