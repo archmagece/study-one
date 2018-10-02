@@ -1,6 +1,7 @@
 rootProject.name = 'study-one'
 
 include 'algospot-java'
+include 'hello-world-java'
 include 'hello-world-kotlin'
 include 'hello-world-scala'
 

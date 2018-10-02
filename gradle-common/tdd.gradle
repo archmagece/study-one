@@ -4,6 +4,8 @@ ext {
 	junit_version = '4.12'
 	java_version = '1.8'
 }
+apply plugin: 'idea'
+apply plugin: 'eclipse'
 
 idea {
 	module {

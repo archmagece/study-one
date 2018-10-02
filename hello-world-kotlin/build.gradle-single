@@ -1,0 +1,60 @@
+plugins {
+	id 'org.jetbrains.kotlin.jvm' version '1.2.71'
+}
+ext {
+	lombok_version = '1.18.2'
+	spring_boot_version = '2.0.5.RELEASE'
+	junit_version = '4.12'
+	java_version = '1.8'
+}
+
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+group 'archmagece'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = java_version
+targetCompatibility = java_version
+compileKotlin {
+	kotlinOptions.jvmTarget = java_version
+	kotlinOptions.freeCompilerArgs = ['-Xjsr305=strict']
+}
+compileTestKotlin {
+	kotlinOptions.jvmTarget = java_version
+	kotlinOptions.freeCompilerArgs = ['-Xjsr305=strict']
+}
+
+idea {
+	module {
+		downloadJavadoc = true
+		downloadSources = true
+	}
+}
+eclipse {
+	classpath {
+		downloadJavadoc = true
+		downloadSources = true
+	}
+}
+
+repositories {
+	mavenCentral()
+	jcenter()
+	mavenLocal()
+	maven {
+		url "https://plugins.gradle.org/m2/"
+	}
+}
+
+dependencies {
+	compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+	testCompile "org.jetbrains.kotlin:kotlin-test"
+	testCompile "org.jetbrains.kotlin:kotlin-test-junit"
+
+	//logging
+	compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+
+	testImplementation "junit:junit:$junit_version"
+}
+

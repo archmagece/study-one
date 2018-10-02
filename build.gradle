@@ -22,14 +22,12 @@ apply plugin: 'base'
 allprojects {
 	apply plugin: 'idea'
 	apply plugin: 'eclipse'
-
-	repositories {
-		mavenCentral()
-		jcenter()
-		maven { url 'http://central.maven.org/maven2' }
-		maven { url 'http://clojars.org/repo' }
-	}
-
+//	repositories {
+//		mavenCentral()
+//		jcenter()
+//		maven { url 'http://central.maven.org/maven2' }
+//		maven { url 'http://clojars.org/repo' }
+//	}
 //	apply plugin: 'java'
 //
 //	dependencies {
