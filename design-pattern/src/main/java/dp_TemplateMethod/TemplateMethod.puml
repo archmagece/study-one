@@ -1,0 +1,29 @@
+@startuml
+
+abstract AbstractClass {
+	{abstract} method1() : ??
+	{abstract} method2() : ??
+	+ methodPublic()
+	# methodProtected()
+}
+
+class ConcreteClassType1 {
+	+ method1() : ??
+	+ method2() : ??
+}
+class ConcreteClassType2 {
+	+ method1() : ??
+	+ method2() : ??
+	+ methodType2()
+}
+class ConcreteClassType3 {
+	+ method1() : ??
+	+ method2() : ??
+	- methodType3()
+}
+
+AbstractClass <|-- ConcreteClassType1
+AbstractClass <|-- ConcreteClassType2
+AbstractClass <|-- ConcreteClassType3
+
+@enduml

@@ -1,0 +1,1 @@
+https://commons.wikimedia.org/wiki/File:Iterator_UML_class_diagram.svg

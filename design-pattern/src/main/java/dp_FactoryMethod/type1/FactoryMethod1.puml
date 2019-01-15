@@ -1,0 +1,33 @@
+@startuml
+
+interface Factory {
+	+ getOut();
+}
+
+class OutFactory {
+	+ getOut();
+}
+
+interface Out {
+	+ out()
+}
+class FileOut {
+	+ out()
+}
+class DBOut{
+	+ out()
+}
+class MQOut{
+	+ out()
+}
+
+Out <|-- FileOut
+Factory <|-- OutFactory
+'Factory .> Out : use
+
+Out <|-- DBOut
+Out <|-- MQOut
+OutFactory -> Out : create
+Main -> OutFactory : use
+
+@enduml

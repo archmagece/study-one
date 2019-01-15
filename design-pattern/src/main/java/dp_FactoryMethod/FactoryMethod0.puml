@@ -1,0 +1,18 @@
+@startuml
+
+class Creator {
+	+ factoryMethod() : Product
+}
+class ConcreteCreator {
+	+ factoryMethod() : Product
+}
+class Product{
+}
+class ConcreteProduct{
+}
+
+Product <|-- ConcreteProduct
+Creator <|-- ConcreteCreator
+ConcreteProduct <- ConcreteCreator : use
+
+@enduml
