@@ -16,13 +16,13 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = java_version
 targetCompatibility = java_version
-compileKotlin {
+implementationKotlin {
 	kotlinOptions.jvmTarget = java_version
-	kotlinOptions.freeCompilerArgs = ['-Xjsr305=strict']
+	kotlinOptions.freeimplementationrArgs = ['-Xjsr305=strict']
 }
-compileTestKotlin {
+implementationTestKotlin {
 	kotlinOptions.jvmTarget = java_version
-	kotlinOptions.freeCompilerArgs = ['-Xjsr305=strict']
+	kotlinOptions.freeimplementationrArgs = ['-Xjsr305=strict']
 }
 
 idea {
@@ -48,12 +48,12 @@ repositories {
 }
 
 dependencies {
-	compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-	testCompile "org.jetbrains.kotlin:kotlin-test"
-	testCompile "org.jetbrains.kotlin:kotlin-test-junit"
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+	testImplementation "org.jetbrains.kotlin:kotlin-test"
+	testImplementation "org.jetbrains.kotlin:kotlin-test-junit"
 
 	//logging
-	compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+	implementation "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
 
 	testImplementation "junit:junit:$junit_version"
 }

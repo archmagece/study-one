@@ -1,27 +1,43 @@
+plugins {
+//    id 'java'
+//    id 'groovy'
+	id 'org.jetbrains.kotlin.jvm' apply false
+	id 'org.jetbrains.kotlin.plugin.spring' apply false
+	id 'org.jetbrains.kotlin.plugin.jpa' apply false
+	id 'org.jetbrains.kotlin.kapt' apply false
+//    id 'org.jetbrains.kotlin.plugin.lombok' apply false
+
+	id 'org.springframework.boot' apply false
+	id 'io.spring.dependency-management' apply false
+
+	id 'com.google.protobuf' apply false
+//    id 'com.ewerk.gradle.plugins.querydsl' apply false
+
+	id 'org.asciidoctor.jvm.convert' apply false
+
+	id 'org.jlleitschuh.gradle.ktlint' apply false
+	id 'org.jlleitschuh.gradle.ktlint-idea' apply false
+
+	id 'com.github.johnrengelman.shadow' apply false
+//    id 'io.freefair.lombok' apply false
+	id 'com.google.cloud.tools.jib' apply false
+
+	id 'org.flywaydb.flyway' apply false
+//	id 'net.nemerosa.versioning' apply false
+//    id 'com.devskiller.jpa2ddl' version '0.9.12'
+//    id "io.github.divinespear.jpa-schema-generate" version "0.4.0"
+}
+
 group 'archmagece'
 version '1.0-SNAPSHOT'
-
-buildscript {
-	repositories {
-		mavenCentral()
-		jcenter()
-		maven { url = 'http://clojars.org/repo' }
-		maven { url = 'http://repo.clojars.org/' }
-	}
-//	dependencies {
-//		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-////		classpath "gradle.plugin.org.gradle.kotlin:gradle-kotlin-dsl-plugins:1.0-rc-9"
-//
-////		classpath "clojuresque:clojuresque:1.7.0"
-//		classpath "io.github.gradle-clojure:gradle-clojure-plugin:$clojure_gradle_plugin_version"
-//	}
-}
 
 apply plugin: 'base'
 
 allprojects {
 	apply plugin: 'idea'
 	apply plugin: 'eclipse'
+	apply plugin: 'io.spring.dependency-management'
+
 //	repositories {
 //		mavenCentral()
 //		jcenter()
@@ -75,8 +91,8 @@ allprojects {
 //		}
 //	}
 //
-//	[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-//	tasks.withType(JavaCompile) {
+//	[implementationJava, implementationTestJava]*.options*.encoding = 'UTF-8'
+//	tasks.withType(Javaimplementation) {
 //		options.encoding = 'UTF-8'
 //	}
 //
@@ -84,13 +100,13 @@ allprojects {
 //	version = project_version
 //	sourceCompatibility = java_version
 //	targetCompatibility = java_version
-//	compileKotlin {
+//	implementationKotlin {
 //		kotlinOptions.jvmTarget = java_version
-//		kotlinOptions.freeCompilerArgs = ["-Xjsr305=strict"]
+//		kotlinOptions.freeimplementationrArgs = ["-Xjsr305=strict"]
 //	}
-//	compileTestKotlin {
+//	implementationTestKotlin {
 //		kotlinOptions.jvmTarget = java_version
-//		kotlinOptions.freeCompilerArgs = ["-Xjsr305=strict"]
+//		kotlinOptions.freeimplementationrArgs = ["-Xjsr305=strict"]
 //	}
 //	clojure {
 //		builds {
@@ -108,10 +124,10 @@ allprojects {
 //
 //	dependencies {
 //		compileOnly "org.projectlombok:lombok:$lombok_version"
-//		testCompile "org.projectlombok:lombok:$lombok_version"
+//		testImplementation "org.projectlombok:lombok:$lombok_version"
 //
 //		//logging
-//		compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+//		implementation "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
 //
 //		testImplementation "junit:junit:$junit_version"
 //	}

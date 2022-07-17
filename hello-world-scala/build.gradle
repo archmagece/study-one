@@ -13,10 +13,10 @@ targetCompatibility = java_version
 
 dependencies {
 	implementation "org.scala-lang:scala-library:$scala_version"
-	testImplementation "org.scalatest:scalatest_2.12:$scala_test_version"
+//	testImplementation "org.scalatest:scalatest_2.12:$scala_test_version"
 
 	//logging
-	compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+//	implementation "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
 
 	testImplementation "junit:junit:$junit_version"
 }

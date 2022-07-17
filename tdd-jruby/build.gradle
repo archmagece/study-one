@@ -23,7 +23,7 @@ targetCompatibility = java_version
 
 dependencies {
 	//logging
-	compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+	implementation "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
 
 	testImplementation "junit:junit:$junit_version"
 }

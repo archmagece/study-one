@@ -19,13 +19,13 @@ targetCompatibility = java_version
 
 dependencies {
 	compileOnly "org.projectlombok:lombok:$lombok_version"
-	testCompile "org.projectlombok:lombok:$lombok_version"
+	testImplementation "org.projectlombok:lombok:$lombok_version"
 
-	testCompile group: 'commons-codec', name: 'commons-codec', version: '1.11'
-	testCompile group: 'org.springframework', name: 'spring-core', version: '5.1.0.RELEASE'
+	testImplementation group: 'commons-codec', name: 'commons-codec', version: '1.11'
+	testImplementation group: 'org.springframework', name: 'spring-core', version: '5.1.0.RELEASE'
 
 	//logging
-	compile "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
+	implementation "org.springframework.boot:spring-boot-starter-logging:$spring_boot_version"
 
 	testImplementation "junit:junit:$junit_version"
 }
