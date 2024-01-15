@@ -30,6 +30,9 @@ classes/
 gradle/
 /gradlew*
 
+#### c
+cmake-build-debug/
+
 ### etc ###
 rebel.xml
 
